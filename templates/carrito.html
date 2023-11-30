@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,14 +7,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carrito</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Autour+One&family=Dancing+Script&family=Mohave&family=Oswald&display=swap"
     rel="stylesheet">
-  <link rel="icon" href="./media/icon/icons8-book-48.ico">
-  <script src="./js/headerFooter.js"></script>
+  <link rel="icon" href="{% static './icon/icons8-book-48.ico' %}">
+  <script src="{% static './js/headerFooter.js' %}"></script>
 </head>
 
 <body class="body-carrito">
@@ -51,8 +53,8 @@
   </main>
   <footer class="item footer carrito-footer" id="footer-container"></footer>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-  <script src="./js/carrito.js"></script>
-  <script src="./js/dropdown.js"></script>
+  <script src="{% static './js/carrito.js' %}"></script>
+  <script src="{% static './js/dropdown.js' %}"></script>
 </body>
 
 </html>
