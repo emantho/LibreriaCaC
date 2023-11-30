@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="{% static './css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Autour+One&family=Dancing+Script&family=Mohave&family=Oswald&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="{% static './media/icon/icons8-book-48.ico'%}">
+    <script src="{% static './js/headerFooter.js'%}"></script>
+    <script src="{% static './js/validarFormContacto.js'%}"></script>
+</head>
+
+<body>
+    <div>
+        <div class="header-nav-container" id="header-nav-container"></div>
+        <main class="item main">
+            <div id="ingresos-container">
+                <div class="slideshow-container">
+                    <h2>Últimos ingresos</h2>
+                    <div class="mySlides">
+                        <div class="card">
+                            <img src="{%static './media/image/el-problema-final.jpg'%}" alt="El problema final">
+                            <h4>El problema final</h4>
+                            <p class="price">$10699</p>
+                            <p class="genero">Crimen y misterio</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                        <div class="card">
+                            <img src="{% static './media/image/holly-edicion-en-espanol.jpg'%}" alt="Holly">
+                            <h4>Holly</h4>
+                            <p class="price">$15999</p>
+                            <p class="genero">Terror</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                        <div class="card">
+                            <img src="{% static './media/image/horoscopo-chino-2024.jpg'%}" alt="Horoscopo chino 2024">
+                            <h4>Horóscopo chino 2024</h4>
+                            <p class="price">$7999</p>
+                            <p class="genero">Religión, espíritu y creencias</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                    </div>
+                    <div class="mySlides">
+                        <div class="card">
+                            <img src="{% static './media/image/un-mundo-de-ensueno.jpg'%}" alt="Un mundo de ensueño">
+                            <h4>Un mundo de ensueño</h4>
+                            <p class="price">$10999</p>
+                            <p class="genero">Romance</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                        <div class="card">
+                            <img src="{% static './media/image/roger-waters.jpg'%}" alt="Roger Waters">
+                            <h4>Roger Waters</h4>
+                            <p class="price">$9999</p>
+                            <p class="genero">Música</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                        <div class="card">
+                            <img src="{% static './media/image/la-armadura-de-la-luz-saga-los-pilares-de-la-tierra-4.jpg'%}"
+                                alt="La armadura de la luz saga los pilares de la tierra">
+                            <h4>La armadura de la luz</h4>
+                            <p class="price">$12699</p>
+                            <p>Fantasía</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                    </div>
+                    <div class="mySlides">
+                        <div class="card">
+                            <img src="{% static './media/image/el-hombre-en-busca-de-sentido.jpg'%}"
+                                alt="El hombre en busca de sentido">
+                            <h4>El hombre en busca de sentido</h4>
+                            <p class="price">$6890</p>
+                            <p class="genero">Psicología</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                        <div class="card">
+                            <img src="{% static './media/image/artificial.jpg'%}" alt="Artificial">
+                            <h4>Artificial</h4>
+                            <p class="price">$7999</p>
+                            <p class="genero">Divulgación científica</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+                        <div class="card">
+                            <img src="{% static './media/image/73-margaritas.jpg'%}" alt="73 margaritas">
+                            <h4>73 margaritas</h4>
+                            <p class="price">$6999</p>
+                            <p class="genero">Romance</p>
+                            <p><button>Agregar al carrito</button></p>
+                        </div>
+
+
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+            </div>
+            <h2 id="seccionQuienesSomos">Quiénes somos</h2>
+            <div class="seccionQuienesSomos">
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure placeat, animi officiis maxime odio
+                    explicabo modi praesentium ut sequi similique deleniti quibusdam necessitatibus minima consectetur
+                    est earum veniam velit ducimus?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, aliquam! Aperiam quasi illum non quo
+                    dolorem iusto, totam, magnam eaque maxime, accusamus provident iure impedit nesciunt vero maiores
+                    perspiciatis! Placeat.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur aliquid earum officia eaque et
+                    ullam temporibus omnis repellat ipsum laboriosam, sed labore non illo ab velit nihil ducimus magnam
+                    perferendis?</p>
+            </div>
+            <h2 id="seccionContacto">Contacto</h2>
+
+            <div class="seccionContacto">
+                <div id="datosContacto">
+                    <ul>
+                        <li>
+                            <h3>Virrey del Pino 4555, Villa Ortúzar (CABA)</h3>
+                        </li>
+                        <li>
+                            <h3>4567-3388</h3>
+                        </li>
+                        <li>
+                            <h3>codoacodoa@gmail.com</h3>
+                        </li>
+                        <li>
+                            <h3>Redes Sociales</h3>
+                        </li>
+                        <li>
+                            <ul class="redesSociales">
+                                <li id="facebook"><a href=""><img src="{% static './media/image/icons8-facebook-50.png'%}"
+                                            height="25em" width="25em" alt=""></a></li>
+                                <li id="instagram"><a href=""><img src="{% static './media/image/icons8-instagram-50.png'%}"
+                                            height="25em" width="25em" alt=""></a></li>
+                                <li id="youtube"><a href=""><img src="{% static './media/image/icons8-youtube-50.png'%}" height="25em"
+                                            width="25em" alt=""></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6570.067672270353!2d-58.47630414422815!3d-34.57801038635882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb671c0e6a223%3A0x5ecb08626a9d3595!2sVirrey%20del%20Pino%204555%2C%20C1430CAS%20CABA!5e0!3m2!1ses-419!2sar!4v1696530061154!5m2!1ses-419!2sar"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div id="formularioContacto">
+                    <form action="mailto:codoacodo@gmail.com?subject=Consulta" method="post" enctype="text/plain"
+                        onsubmit="return validarFormulario()">
+                        <fieldset>
+                            <legend>
+                                <h4>Dejanos tu consulta!</h4>
+                            </legend>
+                            <label for="nombreApellido">Nombre y apellido:</label><br>
+                            <input type="text" id="nombreApellido" name="nombreApellido" size="35" maxlength="50"><br>
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" size="35" maxlength="50"><br><br>
+                            <textarea name="consulta" id="consulta" cols="40" rows="10"
+                                placeholder="Escriba aquí su consulta..."></textarea>
+                        </fieldset>
+                        <button class="btn-formulario" type="reset">Borrar todo</button>
+                        <button class="btn-formulario" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="item footer" id="footer-container"></footer>
+    </div>
+    <script src="{% static './js/dropdown.js'%}"></script>
+    <script src="{% static './js/sliderIngresosRecomendados.js'%}"></script>
+
+</body>
+
+</html>
