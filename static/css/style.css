@@ -95,9 +95,6 @@ ul {
 .header-nav-container {
     display: grid;
      grid-template-columns: repeat(1, 1fr);
-    /*grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; */
 }
 
 header {
@@ -116,22 +113,11 @@ nav {
 
 /* ------------------ HEADER ------------------ */
 
-/*header {
-    display: grid;
-    grid-area: 100%/100%;
-    height: 4em;
-    background-color: rgb(228, 231, 224);
-    align-items: center;
-} */
-
 .header-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     background-color: rgb(228, 231, 224);
     width: 100%;
-    /*grid-template-rows: 1fr;
-     grid-column-gap: 0px;
-    grid-row-gap: 0px; */
 }
 
 #titulo {
@@ -139,7 +125,6 @@ nav {
     -ms-grid-row-span: 5fr;
     animation: slideInLeft 1s ease-in-out 0.2s 1 normal both;
 }
-
 
 #login {
     grid-area: 1 / 5 / 2 / 6;
@@ -166,7 +151,6 @@ nav {
     justify-content: center;
     margin: 0.8em;
 }
-
 
 /* ------------------ NAV ------------------ */
 
@@ -225,7 +209,6 @@ nav a {
     display: block;
 }
 
-
 .dropdown-content a:hover {
     background-color: #ddd;
 }
@@ -246,8 +229,6 @@ main {
     max-width: 1300px;
 }
 
-
-
 /* ------------------ FOOTER ------------------ */
 
 footer {
@@ -258,7 +239,6 @@ footer {
     height: 5em;
     background-color: rgb(32, 138, 106);
     z-index: 0;
-
     text-align: center;
     align-items: center;
 }
@@ -268,9 +248,6 @@ footer {
     margin-top: 2em;
     padding-top: 2em;
 }
-
-
-
 
 /* ------------------ CONTACTO ------------------ */
 
@@ -286,7 +263,6 @@ footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    
 }
 
 @media (max-width: 480px) {
@@ -295,8 +271,6 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-
-
 
 #datosContacto {
     height: 100%;
@@ -336,9 +310,6 @@ footer {
 
 
 #mapa {
-    /*grid-area: 1 / 2 / 2 / 3;
-    height: 100%;
-    min-width: auto;*/
     min-width: 24em;
     min-height: 18.44em;
     border-radius: 0.2em;
@@ -452,7 +423,6 @@ fieldset {
     margin: 2em auto;
 }
 
-
 .lista-categorias {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -470,31 +440,6 @@ fieldset {
     justify-items: center;
     justify-content: space-evenly;
 }
-/* 
-#cat-1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-#cat-2 {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-#cat-3 {
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-#cat-4 {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-#cat-5 {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-/*#cat-6 {
-    grid-area: 2 / 3 / 3 / 4;
-} */ */
-
 
 .collapsible {
     background-color: #eee;
@@ -508,15 +453,12 @@ fieldset {
     outline: none;
     font-size: 1em;
     margin: 0.2em;
-
 }
-
 
 .active,
 .collapsible:hover {
     background-color: #ccc;
 }
-
 
 .content {
     padding: 0.2em;
@@ -525,17 +467,12 @@ fieldset {
     width: 10em;
     margin-left: 2.5em;
     border-radius: 1em;
-
 }
 
 .content a {
     display: block;
     padding: 0.2em;
 }
-
-
-
-
 
 /* ------------------ LIBROS ------------------ */
 
@@ -578,12 +515,9 @@ fieldset {
 
 .card img {
     width: 70%;
-    /* max-width: 10em;
-    max-height: 20em; */
 }
 
 /* ------------------ SLIDER ------------------ */
-
 
 .slideshow-container {
     position: relative;
@@ -591,13 +525,10 @@ fieldset {
 
 }
 
-
 .mySlides {
     display: inline;
     text-align: center;
     align-items: center;
-
-
 }
 
 .mySlides div {
@@ -606,7 +537,6 @@ fieldset {
     margin: 2em;
     padding-bottom: 2em;
 }
-
 
 .prev,
 .next {
@@ -624,13 +554,11 @@ fieldset {
     
 }
 
-
 .next {
     position: absolute;
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-
 
 .prev:hover,
 .next:hover {
@@ -638,13 +566,11 @@ fieldset {
     color: white;
 }
 
-
 .dot-container {
     text-align: center;
     padding: 1em;
     background: #ddd;
 }
-
 
 .dot {
     cursor: pointer;
@@ -657,16 +583,12 @@ fieldset {
     transition: background-color 0.6s ease;
 }
 
-
 .active,
 .dot:hover {
     background-color: #717171;
 }
 
-
 /* ------------------ CARRITO ------------------ */
-
-
 
 .body-carrito {
     display: block;
