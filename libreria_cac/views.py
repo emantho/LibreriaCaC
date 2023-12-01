@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 class IndexPage(TemplateView):
 	template_name = "index.html"
  
-class CategoriaPage(TemplateView):
+class CategoriasPage(TemplateView):
 	template_name = "categorias.html"
 
 class CarritoPage(TemplateView):
@@ -11,5 +11,4 @@ class CarritoPage(TemplateView):
 
 class LoginPage(TemplateView):
 	template_name = "login.html"
-
 
