@@ -18,8 +18,15 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import IndexPage
+from .views import CategoriaPage
+from .views import CarritoPage
+from .views import LoginPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", IndexPage.as_view(), name="index")
+    path("", IndexPage.as_view(), name="index"),
+    path("categorias/", CategoriaPage.as_view(), name="categorias"),
+    path("carrito", CarritoPage.as_view(), name="carrito"),
+    path("login", LoginPage.as_view(), name="login"),
+    
 ]
