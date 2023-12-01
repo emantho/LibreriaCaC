@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-*6t$3qzex%_su&p2vt9ejfd+%@)sn^4gu5*+sgi0&!&7z$6(g_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["emantho.pythonanywhere.com"]
-
+# ALLOWED_HOSTS = [] # Used this config locally, comment the others
+ALLOWED_HOSTS = ["emantho.pythonanywhere.com"] # Used this config in PythonAnywhere, comment the others
 
 # Application definition
 
@@ -117,10 +117,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static"]
+# STATICFILES_DIRS = [              # Used this config locally, comment the others
+    # BASE_DIR / "static"]
 
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "static"   # Used this config in PythonAnywhere, comment the others
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
