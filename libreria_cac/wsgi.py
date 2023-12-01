@@ -1,5 +1,5 @@
 """
-WSGI config for LibreriaCaC project.
+WSGI config for libreria_cac project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'LibreriaCaC.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'libreria_cac.settings')
 
 application = get_wsgi_application()

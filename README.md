@@ -1,4 +1,4 @@
-# LibreriaCaC
+# libreria_cac
 Proyecto final del Curso Full Stack Python y entregable del Backend con Django
 
 Este proyecto Django tiene como objetivo proporcionar una solución simple y eficaz para gestionar el inventario de libros de una biblioteca. La estructura del proyecto incluye la aplicación principal de Django, archivos estáticos para estilos y scripts, y plantillas HTML para representar páginas.
@@ -13,7 +13,7 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
 .
 ├── db.sqlite3
 ├── index.py
-├── LibreriaCaC
+├── libreria_cac
 │   ├── asgi.py
 │   ├── __init__.py
 │   ├── settings.py
