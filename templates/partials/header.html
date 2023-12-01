@@ -1,0 +1,92 @@
+{% load static %}
+
+<header>
+    <div class="header-container">
+        <div id="titulo">
+            <h1>Libros Codo a Codo <img src="{% static './image/icons8-book-48.png' %}" alt="Libros Codo a Codo"></h1>
+
+        </div>
+        <div id="login">
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+        <div id="carrito">
+            <a href="{% url 'carrito' %}"><img src="{% static './image/icons8-shopping-cart-48.png' %}"
+                    alt="carrito"></a>
+        </div>
+    </div>
+</header>
+<nav>
+    <div>
+        <h3>
+            <ul class="navegacion">
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li class="dropdown"><button type="button" onclick="myFunction()" class="dropbtn">Categorías</button>
+                </li>
+                <div id="myDropdown" class="dropdown-content">
+                    <ul class="lista-categorias">
+                        <li id="cat-1"> <button type="button" class="collapsible">Arte</button>
+                            <div class="content">
+                                <h5>
+                                    <a href="{% static './categorias.html?categoria=arquitectura' %}">Arquitectura</a>
+                                    <a href="{% static './categorias.html?categoria=fotografia' %}">Fotografía</a>
+                                    <a href="{% static './categorias.html?categoria=musica' %}">Música</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li id="cat-2"><button type="button" class="collapsible">Ciencia</button>
+                            <div class="content">
+                                <h5>
+                                    <a href="{% static './categorias.html?categoria=divulgacion-cientifica' %}">Divulgación
+                                        científica</a>
+                                    <a href="{% static './categorias.html?categoria=fisica-quimica-matematicas' %}">Física,
+                                        química y matemáticas</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li id="cat-3"><button type="button" class="collapsible">Derecho</button>
+                            <div class="content">
+                                <h5>
+                                    <a href="{% static './categorias.html?categoria=teoria-derecho' %}">Teoría general
+                                        del derecho</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li id="cat-4"><button type="button" class="collapsible">Ficción</button>
+                            <div class="content">
+                                <h5>
+                                    <a href="{% static './categorias.html?categoria=crimen-misterio' %}">Crimen y
+                                        misterio</a>
+                                    <a href="{% static './categorias.html?categoria=fantasia' %}">Fantasía</a>
+                                    <a href="{% static './categorias.html?categoria=romance' %}">Romance</a>
+                                    <a href="{% static './categorias.html?categoria=terror' %}">Terror</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li id="cat-5"><button type="button" class="collapsible">Filosofía y religión</button>
+                            <div class="content">
+                                <h5>
+                                    <a href="{% static './categorias.html?categoria=filosofia' %}">Filosofía</a>
+                                    <a href="{% static './categorias.html?categoria=religion-espiritu-creencias' %}">Religión,
+                                        espíritu y creencias</a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li id="cat-6"><button type="button" class="collapsible">Sociedad y ciencias sociales</button>
+                            <div class="content">
+                                <h5>
+                                    <a href="{% static './categorias.html?categoria=psicologia' %}">Psicología</a>
+                                    <a href="{% static './categorias.html?categoria=sociologia-antropologia' %}">Sociología
+                                        y antropología</a>
+                                </h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <li><a href="{% static './index.html#seccionQuienesSomos' %}">Quiénes somos</a></li>
+                <li><a href="{% static './index.html#seccionContacto' %}">Contacto</a></li>
+            </ul>
+
+        </h3>
+    </div>
+
+</nav>
