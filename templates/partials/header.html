@@ -15,78 +15,73 @@
         </div>
     </div>
 </header>
-<nav>
-    <div>
-        <h3>
-            <ul class="navegacion">
-                <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li class="dropdown"><button type="button" onclick="myFunction()" class="dropbtn">Categorías</button>
+<div class="nav">
+    <ul class="navegacion">
+        <li class="navegacion-item"><a class="navegacion-a" href="{% url 'index' %}">Inicio</a></li>
+        <li class="navegacion-item"><a class="navegacion-a" href="{% url 'index' %}">Novedades</a></li>
+        <li class="dropdown navegacion-item"><button type="button" onclick="myFunction()" class="dropbtn">Categorías</button>
+        </li>
+        <div id="myDropdown" class="dropdown-content">
+            <ul class="lista-categorias">
+                <li id="cat-1"> <button type="button" class="collapsible">Arte</button>
+                    <div class="content">
+                        <h5>
+                            <a href="{% url 'categorias' %}?categoria=arquitectura">Arquitectura</a>
+                            <a href="{% url 'categorias' %}?categoria=fotografia">Fotografía</a>
+                            <a href="{% url 'categorias' %}?categoria=musica'">Música</a>
+                        </h5>
+                    </div>
                 </li>
-                <div id="myDropdown" class="dropdown-content">
-                    <ul class="lista-categorias">
-                        <li id="cat-1"> <button type="button" class="collapsible">Arte</button>
-                            <div class="content">
-                                <h5>
-                                    <a href="{% url 'categorias' %}?categoria=arquitectura">Arquitectura</a>
-                                    <a href="{% url 'categorias' %}?categoria=fotografia">Fotografía</a>
-                                    <a href="{% url 'categorias' %}?categoria=musica'">Música</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li id="cat-2"><button type="button" class="collapsible">Ciencia</button>
-                            <div class="content">
-                                <h5>
-                                    <a href="{% url 'categorias' %}?categoria=divulgacion-cientifica">Divulgación
-                                        científica</a>
-                                    <a href="{% url 'categorias' %}?categoria=fisica-quimica-matematicas">Física,
-                                        química y matemáticas</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li id="cat-3"><button type="button" class="collapsible">Derecho</button>
-                            <div class="content">
-                                <h5>
-                                    <a href="{% url 'categorias' %}?categoria=teoria-derecho">Teoría general
-                                        del derecho</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li id="cat-4"><button type="button" class="collapsible">Ficción</button>
-                            <div class="content">
-                                <h5>
-                                    <a href="{% url 'categorias' %}?categoria=crimen-misterio">Crimen y
-                                        misterio</a>
-                                    <a href="{% url 'categorias' %}?categoria=fantasia">Fantasía</a>
-                                    <a href="{% url 'categorias' %}?categoria=romance">Romance</a>
-                                    <a href="{% url 'categorias' %}?categoria=terror">Terror</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li id="cat-5"><button type="button" class="collapsible">Filosofía y religión</button>
-                            <div class="content">
-                                <h5>
-                                    <a href="{% url 'categorias' %}?categoria=filosofia">Filosofía</a>
-                                    <a href="{% url 'categorias' %}?categoria=religion-espiritu-creencias">Religión,
-                                        espíritu y creencias</a>
-                                </h5>
-                            </div>
-                        </li>
-                        <li id="cat-6"><button type="button" class="collapsible">Sociedad y ciencias sociales</button>
-                            <div class="content">
-                                <h5>
-                                    <a href="{% url 'categorias' %}?categoria=psicologia">Psicología</a>
-                                    <a href="{% url 'categorias' %}?categoria=sociologia-antropologia">Sociología
-                                        y antropología</a>
-                                </h5>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <li><a href="{% url 'index' %}#seccionQuienesSomos">Quiénes somos</a></li>
-                <li><a href="{% url 'index' %}#seccionContacto">Contacto</a></li>
+                <li id="cat-2"><button type="button" class="collapsible">Ciencia</button>
+                    <div class="content">
+                        <h5>
+                            <a href="{% url 'categorias' %}?categoria=divulgacion-cientifica">Divulgación
+                                científica</a>
+                            <a href="{% url 'categorias' %}?categoria=fisica-quimica-matematicas">Física,
+                                química y matemáticas</a>
+                        </h5>
+                    </div>
+                </li>
+                <li id="cat-3"><button type="button" class="collapsible">Derecho</button>
+                    <div class="content">
+                        <h5>
+                            <a href="{% url 'categorias' %}?categoria=teoria-derecho">Teoría general
+                                del derecho</a>
+                        </h5>
+                    </div>
+                </li>
+                <li id="cat-4"><button type="button" class="collapsible">Ficción</button>
+                    <div class="content">
+                        <h5>
+                            <a href="{% url 'categorias' %}?categoria=crimen-misterio">Crimen y
+                                misterio</a>
+                            <a href="{% url 'categorias' %}?categoria=fantasia">Fantasía</a>
+                            <a href="{% url 'categorias' %}?categoria=romance">Romance</a>
+                            <a href="{% url 'categorias' %}?categoria=terror">Terror</a>
+                        </h5>
+                    </div>
+                </li>
+                <li id="cat-5"><button type="button" class="collapsible">Filosofía y religión</button>
+                    <div class="content">
+                        <h5>
+                            <a href="{% url 'categorias' %}?categoria=filosofia">Filosofía</a>
+                            <a href="{% url 'categorias' %}?categoria=religion-espiritu-creencias">Religión,
+                                espíritu y creencias</a>
+                        </h5>
+                    </div>
+                </li>
+                <li id="cat-6"><button type="button" class="collapsible">Sociedad y ciencias sociales</button>
+                    <div class="content">
+                        <h5>
+                            <a href="{% url 'categorias' %}?categoria=psicologia">Psicología</a>
+                            <a href="{% url 'categorias' %}?categoria=sociologia-antropologia">Sociología
+                                y antropología</a>
+                        </h5>
+                    </div>
+                </li>
             </ul>
-
-        </h3>
-    </div>
-
-</nav>
+        </div>
+        <li class="navegacion-item"><a class="navegacion-a" href="{% url 'index' %}#seccionQuienesSomos">Quiénes somos</a></li>
+        <li class="navegacion-item"><a class="navegacion-a" href="{% url 'index' %}#seccionContacto">Contacto</a></li>
+    </ul>
+</div>

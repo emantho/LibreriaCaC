@@ -32,7 +32,7 @@ h2 {
 }
 
 h3 {
-    display: grid;
+    /* display: grid; */
     text-align: center;
     padding: 1em;
 }
@@ -136,7 +136,6 @@ nav {
     background-color: rgb(32, 138, 106);
     width: 5em;
     height: 2em;
-    /*medidas: up rg dw lf*/
     margin: 1em;
 }
 
@@ -154,24 +153,31 @@ nav {
 
 /* ------------------ NAV ------------------ */
 
-nav {
-    display: grid;
-    grid-area: 100%/100%;
+.nav {
+    display: block;
+    justify-content: center;
+    justify-items: center;
     height: 4em;
     background-color: rgb(32, 138, 106);
-    align-items: center;
     font-family: "Mohave", sans-serif;
 }
 
 .navegacion {
-    display: grid;
-    grid-column: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "categorias inicio quienes contacto";
-    width: 100%;
-    /* justify-content: space-around; */
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    margin: auto;
+    padding: 1em;
 }
 
-nav a {
+.navegacion-item {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.navegacion-a {
+    margin: auto;
     color: white;
 }
 
@@ -185,11 +191,6 @@ nav a {
     font-weight: inherit;
     border: none;
     cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
