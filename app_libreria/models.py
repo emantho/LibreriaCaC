@@ -6,7 +6,7 @@ class Libro(models.Model): # This is the model to be registered in app_libreria.
     titulo = models.CharField(max_length=100, null=False, blank=False)
     autor = models.CharField(max_length=100, null=False, blank=False)
     editorial = models.CharField(max_length=100, null=False, blank=False)
-    precio = models.IntegerField(max_length=10, null=False, blank=False)
+    precio = models.IntegerField(null=False, blank=False)
     fecha_publicacion = models.DateField(max_length=100, null=False, blank=False)
     isbn = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
 
@@ -14,7 +14,7 @@ class Libro(models.Model): # This is the model to be registered in app_libreria.
     # que indicar directamente en la metaclase
     
     class Meta:
-        db_table: "Nuevos_ingresos"
+        db_table = "Nuevos_ingresos"
     
     def __str__(self):
         return f"Titulo: {self.titulo} | Autor: {self.autor} | Editorial: {self.editorial} | ISBN: {self.isbn}"

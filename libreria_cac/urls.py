@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import IndexPage
-from .views import NovedadesPage
+from .views import LibrosPage
 from .views import CategoriasPage
 from .views import CarritoPage
 from .views import LoginPage
@@ -26,7 +26,7 @@ from .views import LoginPage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", IndexPage.as_view(), name="index"),
-    path("novedades", NovedadesPage.as_view(), name="novedades"),
+    path("libros", LibrosPage.as_view(), name="libros"),
     path("categorias/", CategoriasPage.as_view(), name="categorias"),
     path("carrito", CarritoPage.as_view(), name="carrito"),
     path("login", LoginPage.as_view(), name="login"),
