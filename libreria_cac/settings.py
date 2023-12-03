@@ -23,12 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*6t$3qzex%_su&p2vt9ejfd+%@)sn^4gu5*+sgi0&!&7z$6(g_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = True    # only locally
+DEBUG = False   # only PythonAnywhere
 
 # ALLOWED_HOSTS = [] # Used this config locally, comment the others
 ALLOWED_HOSTS = ["emantho.pythonanywhere.com"] # Used this config in PythonAnywhere, comment the others
 
 # Application definition
+
+CUSTOM_APPS = [
+    "app_libreria"
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+INSTALLED_APPS += CUSTOM_APPS 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,7 +125,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # STATICFILES_DIRS = [              # Used this config locally, comment the others
-    # BASE_DIR / "static"]
+#     BASE_DIR / "static"]
 
 STATIC_ROOT = BASE_DIR / "static"   # Used this config in PythonAnywhere, comment the others
 
