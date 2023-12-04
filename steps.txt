@@ -163,11 +163,163 @@ App creation, Database connection,  and crud
 2.3.1 - Create (ROUTER) file urls.py into app_libreria
 
 2.3.2 - Create folder templates into app_libreria
+    Inside this we must create the html to view the actions
+    -->> libro.html
+    ....
+    from django.contrib import admin
+    from django.urls import path , include
 
 
+    from .views import      LibroListView   \
+                        ,   LibroDetailView \
+                        ,   LibroCreateView \
+                        ,   LibroUpdateView \
+                        ,   LibroDeleteView
+
+    app_name = "libro"
+
+    urlpatterns = [
+        path("", LibroListView.as_view(), name="all"),
+        path("create/", LibroCreateView.as_view(), name="create"),
+        path("<int:pk>/detail/", LibroDetailView.as_view(), name="detail"),
+        path("<int:pk>/update/", LibroUpdateView.as_view(), name="update"),
+        path("<int:pk>/delete/", LibroDeleteView.as_view(), name="delete")
+
+    ]
+    ....
+
+2.3.3 - Create the views for the html
+    Inside this file will exist the CRUD {view, detail, create, update and delete}
+    ....
+    from django.shortcuts import render
+    from django.urls import reverse_lazy
+    from django.views import View
+
+    from django.views.generic.list import ListView
+    from django.views.generic.detail import DetailView
+    from django.views.generic.edit import DeleteView, UpdateView, CreateView
 
 
+    from .models import Libro
 
+    # Create your views here.
+
+
+    class LibroBaseView(View):
+        template_name = 'libro.html'
+        model = Libro
+        fields = '__all__'
+        success_url = reverse_lazy('libro:all')
+
+
+    class LibroListView(LibroBaseView,ListView):
+        """
+        ESTO ME PERMITE CREAR UNA VISTA CON LOS LIBROS
+        """
+
+    class LibroDetailView(LibroBaseView,DetailView):
+        template_name = "Libro_detail.html"
+
+    class LibroCreateView(LibroBaseView,CreateView):
+        template_name = "Libro_create.html"
+        extra_context = {
+            "tipo": "Crear Libro"
+        }
+
+
+    class LibroUpdateView(LibroBaseView,UpdateView):
+        template_name = "Libro_create.html"
+        extra_context = {
+            "tipo": "Actualizar Libro"
+        }
+
+    class LibroDeleteView(LibroBaseView,DeleteView):
+        template_name = "Libro_delete.html"
+        extra_context = {
+            "tipo": "Borrar Libro"
+    }
+    ....
+
+2.3.4 - Create routes in app_library.urls.py
+    ....
+    from django.contrib import admin
+    from django.urls import path , include
+
+
+    from .views import      LibroListView   \
+                        ,   LibroDetailView \
+                        ,   LibroCreateView \
+                        ,   LibroUpdateView \
+                        ,   LibroDeleteView
+
+    app_name = "libro"
+
+    urlpatterns = [
+        path("", LibroListView.as_view(), name="all"),
+        path("create/", LibroCreateView.as_view(), name="create"),
+        path("<int:pk>/detail/", LibroDetailView.as_view(), name="detail"),
+        path("<int:pk>/update/", LibroUpdateView.as_view(), name="update"),
+        path("<int:pk>/delete/", LibroDeleteView.as_view(), name="delete")
+
+    ]
+    ....
+
+2.3.5 - Append the path into project.urls.py (libreria_cac)
+    ....
+    from django.contrib import admin
+    from django.urls import path, include
+
+    from .views import IndexPage
+    from .views import LibrosPage
+    from .views import CategoriasPage
+    from .views import CarritoPage
+    from .views import LoginPage
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path("", IndexPage.as_view(), name="index"),
+        path("libros", LibrosPage.as_view(), name="libros"),
+        path("categorias/", CategoriasPage.as_view(), name="categorias"),
+        path("carrito", CarritoPage.as_view(), name="carrito"),
+        path("login", LoginPage.as_view(), name="login"),
+        path("libro/", include("app_libreria.urls")),
+    ]
+    ....
+
+2.3.6 - Point the view to the template in index.html (main page or header)
+    <li class="navegacion-item"><a class="navegacion-a" href="{% url 'libro:all' %}">Novedades</a></li>
+
+2.4 - Creating views for app
+    This task is for the pages or frontend of the actions of CRUD
+
+2.4.1 - Creating libro_create.html
+    
+    ....
+    {% extends 'base.html' %} {% load static %} {% block content %}
+    <main>
+        <div>
+            <!-- <h1>CREAR LIBRO</h1> -->
+            <form method="post">
+                {% csrf_token %}
+                <div>{{form.as_div}}</div> <!-- cada campo el form es un div -->
+                <input type="submit" value="{{ tipo }}" />
+            </form>
+            <a href="{% url 'libro:all' %}">Volver al inicio</a>
+        </div>
+    </main>
+
+    {% endblock %}
+    ....
+
+2.4.2 - Connecting libro.html with libro_create.html
+    ....
+    <h2><a href="{% url 'libro:create' %}">Crear un Libro</a></h2>
+    ....
+
+2.4.3 - create libro_delete.html and connect with libro.html
+    ```
+    
+    ```
 
 
 titulo	autor	publicacion	isdb

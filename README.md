@@ -14,7 +14,7 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
 
 
 ## Estructura de proyecto
-...
+```
 .
 ├── libreria_cac
 │   ├── asgi.py
@@ -112,5 +112,14 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
     └── partials
         ├── footer.html
         └── header.html
+```
+
+## Aplicación Libreria Codo a Codo
+
 ...
+La aplicación Librería habilitará la gestión de libros, permitiendo la creación, edición, visualización y eliminación de estos. 
+
+Se habilitarán una vista de administración con acceso total a las funciones de la aplicación. 
+
+
 

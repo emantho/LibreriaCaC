@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<main>
+    <div>
+        <h1>Estas seguro ue deseas borrar este libro?</h1>
+        <h2>{{libro.nombre}}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div>{{form.as_p}}</div>
+            <input type="submit" value="{{ tipo }}" />
+        </form>
+
+        <a href="{% url 'libro:all' %}">Cancelar</a>
+    </div>
+</main>
+{% endblock %}
