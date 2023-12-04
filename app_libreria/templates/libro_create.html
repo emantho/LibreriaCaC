@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<main>
+    <div>
+        <!-- <h1>CREAR LIBRO</h1> -->
+        <form method="post">
+            {% csrf_token %}
+            <div>{{form.as_div}}</div> <!-- cada campo el form es un div -->
+            <input type="submit" value="{{ tipo }}" />
+        </form>
+        <a href="{% url 'libro:all' %}">Volver al inicio</a>
+    </div>
+</main>
+
+{% endblock %}
