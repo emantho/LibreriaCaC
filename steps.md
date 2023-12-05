@@ -49,18 +49,17 @@ App creation
 
 
 
-# STEP TO STEP
----------------
-
-## 1st Part
-........ 
-
-Project build up, venv, global project<name> settings, folder creation {static and templates} 
+# STEP2STEP - Python-Django Project and Hosting in Pythonanywhere
 
 
-## 2nd Part
-........
-App creation, Database connection,  and crud
+## 1st Part ->> Building Project and structure, venv creation and preparation
+
+    Project build up, venv, global project<name> settings, folder creation {static and templates} 
+
+
+## 2nd Part ->> App creation, Database connection, and crud development
+
+    App creation, Database connection,  and crud
 
 ### 2.1. App creation
 
@@ -420,9 +419,41 @@ App creation, Database connection,  and crud
     "rest_framework"
     ]
 
+## 3rd Part ->> Deploy in PythonAnywhere and Database integration
 
+### 3.1 - 
+### 3.2 - 
+### 3.3 - 
+### 3.4 - 
+### 3.5 - 
+### 3.6 - Integration with PythonAnywhere Database 
 
+#### 3.6.1 - Create a DataBase in Database page
+    Go to Databases > Select MySQL or Postgres depending the need
 
+##### 3.6.1.1 - Create MySQL Credentials
+    MySQL user:     emantho
+    MySQL password: librer01234
+
+##### 3.6.1.2 - Create Database and password
+    Create a new database name: libreria_cac
+
+##### 3.6.1.2 - Start libreria_cac-Database console
+    In Databases page goto databases and select emantho$libreria_cac
+    
+##### 3.6.2 - Integrate Database with project.settings.py
+    Add MySQL database information into project.settings.py
+
+    DATABASES = { # Configuration for remote conection to database, comment local to use
+        'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'emantho$libreria_cac',
+                'USER': 'emantho',
+                'PASSWORD': 'librer01234',
+                'HOST': 'emantho.mysql.pythonanywhere-services.com',
+                'PORT': '3306',
+                }
+        }
 
 
 
