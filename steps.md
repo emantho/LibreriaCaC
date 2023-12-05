@@ -49,27 +49,27 @@ App creation
 
 
 
-STEP TO STEP
+# STEP TO STEP
 ---------------
 
-1st Part
+## 1st Part
 ........ 
 
 Project build up, venv, global project<name> settings, folder creation {static and templates} 
 
 
-2nd Part
+## 2nd Part
 ........
 App creation, Database connection,  and crud
 
-2.1. App creation
+### 2.1. App creation
 
 	Note: use any of these commands
 	$ python manage.py startapp app_vino
 	or
 	$ django-admin startapp app_vino
 
-2.1.1 - Create app -->> django-admin startapp app_libreria
+### 2.1.1 - Create app -->> django-admin startapp app_libreria
 	
 	This command create a new folder with files inside
 	app_libreria
@@ -81,7 +81,7 @@ App creation, Database connection,  and crud
 	- tests.py	-> Automate test
 	- views.py	-> Views to show information
 
-2.1.2 - Models.py
+### 2.1.2 - Models.py
 	
 	Goto models to create the table structure
 	
@@ -112,7 +112,7 @@ App creation, Database connection,  and crud
             		for field in self.__class__._meta.fields[1:]
         ]
         
-2.1.2 - Admins.py
+### 2.1.2 - Admins.py
 	Go to registrer the model 
 	
 	from django.contrib import admin
@@ -123,7 +123,7 @@ App creation, Database connection,  and crud
 	class LibroAdmin(admin.ModelAdmin):
         ...
 
-2.1.3 - Insert app configuration into project.settings.py
+### 2.1.3 - Insert app configuration into project.settings.py
     
     # Application definition
 
@@ -142,30 +142,31 @@ App creation, Database connection,  and crud
 
     INSTALLED_APPS += CUSTOM_APPS
     
-2.2 - Migrate model into Database
+### 2.2 - Migrate model into Database
 
-2.2.1 - Do Makemigration to prepare changes in Database for the created model 
+#### 2.2.1 - Do Makemigration to prepare changes in Database for the created model 
     python manage.py makemigrations
 
-2.2.2 - Do Migrate to apply the changes into Database
+#### 2.2.2 - Do Migrate to apply the changes into Database
     python manage.py migrate
     # This coommand will create the new table into de Database 
 
-2.2.3 - Create superuser
+#### 2.2.3 - Create superuser
     python manage.py createsuperuser
 
     user:    librero
     Email:   libreriacac@mail.com
     passw:   librer01234
 
-2.3 - Connection with frontEnd
+### 2.3 - Connection with frontEnd
 
-2.3.1 - Create (ROUTER) file urls.py into app_libreria
+#### 2.3.1 - Create (ROUTER) file urls.py into app_libreria
 
-2.3.2 - Create folder templates into app_libreria
+#### 2.3.2 - Create folder templates into app_libreria
     Inside this we must create the html to view the actions
-    -->> libro.html
-    ....
+    
+    >> libro.html
+ 
     {% extends 'base.html' %} {% load static %} {% block content %}
 
     <main>
@@ -203,10 +204,10 @@ App creation, Database connection,  and crud
             </div>
     </main>
 
-{% endblock %}
-    ....
+    {% endblock %}
 
-2.3.3 - Create the views for the html
+
+#### 2.3.3 - Create the views for the html
     Inside this file will exist the CRUD {view, detail, create, update and delete}
     ....
     from django.shortcuts import render
@@ -258,7 +259,7 @@ App creation, Database connection,  and crud
     }
     ....
 
-2.3.4 - Create routes in app_library.urls.py
+#### 2.3.4 - Create routes in app_library.urls.py
     ....
     from django.contrib import admin
     from django.urls import path , include
@@ -282,8 +283,8 @@ App creation, Database connection,  and crud
     ]
     ....
 
-2.3.5 - Append the path into project.urls.py (libreria_cac)
-    ....
+#### 2.3.5 - Append the path into project.urls.py (libreria_cac)
+
     from django.contrib import admin
     from django.urls import path, include
 
@@ -302,17 +303,16 @@ App creation, Database connection,  and crud
         path("login", LoginPage.as_view(), name="login"),
         path("libro/", include("app_libreria.urls")),
     ]
-    ....
 
-2.3.6 - Point the view to the template in index.html (main page or header)
+#### 2.3.6 - Point the view to the template in index.html (main page or header)
+`
     <li class="navegacion-item"><a class="navegacion-a" href="{% url 'libro:all' %}">Novedades</a></li>
-
-2.4 - Creating views for app
+`
+### 2.4 - Creating views for app
     This task is for the pages or frontend of the actions of CRUD
 
-2.4.1 - Creating libro_create.html
-    
-    ....
+#### 2.4.1 - Creating libro_create.html
+`
     {% extends 'base.html' %} {% load static %} {% block content %}
     <main>
         <div>
@@ -327,36 +327,101 @@ App creation, Database connection,  and crud
     </main>
 
     {% endblock %}
-    ....
-
-2.4.2 - Connecting libro.html with libro_create.html
-    ....
+`
+#### 2.4.2 - Connecting libro.html with libro_create.html
+`
     <h2><a href="{% url 'libro:create' %}">Crear un Libro</a></h2>
-    ....
+`
 
-2.4.3 - create libro_delete.html and connect with libro.html
-    ```
+#### 2.4.3 - create libro_delete.html and connect with libro.html
+`
     <span>
         <label for="">Borrar</label>
         <a href="{% url 'libro:delete' libro.id %}">❌</a>
     </span>
-    
-    ```
-2.4.4 - create libro_update.html and connecting with libro.html
-    ```
+`
+#### 2.4.4 - create libro_update.html and connecting with libro.html
+`
     <span>
         <label for="">Editar</label>
         <a href="{% url 'libro:update' libro.id %}">📝</a>
     </span>
-    ```
-2.4.4 - create libro_detail.html and connect with libro.html
-    ```
+`
+#### 2.4.4 - create libro_detail.html and connect with libro.html
+`
     <span>
         label for="">Detalles</label>
         <a href="{% url 'libro:detail' libro.id %}">🔍</a>
     </span>
+`
+
+## 3rd Part
+
+### 3.1 - Create Serializer into app_libreria
     
-    ```
+    from rest_framework.serializers import ModelSerializer
+    from .models import Libro
+
+    class LibroSerializer(ModelSerializer):
+        class Meta:
+            model = Libro
+            fields = "__all__"
+
+### 3.2 - Create viewsets.py
+
+    from rest_framework.viewsets import ModelViewSet
+    from .models import Libro
+    from .serializers import LibroSerializer
+    
+    class LibroViewSet(ModelViewSet):
+        queryset = Libro.objects.all()
+        serializer_class = LibroSerializer
+
+### 3.3 - Create router.py
+
+    from rest_framework import routers
+    from .viewsets import LibroViewSet
+
+    router = routers.SimpleRouter()
+
+    <!-- #en este caso se le anexa a la ruta de las urls de la app -->
+    router.register("api-libro",LibroViewSet)
+
+### 3.4 - Connect with app_libreria.urls.py
+
+    from django.contrib import admin
+    from django.urls import path , include
+    
+    
+    from .views import      LibroListView   \
+                        ,   LibroDetailView \
+                        ,   LibroCreateView \
+                        ,   LibroUpdateView \
+                        ,   LibroDeleteView 
+    
+    from .router import router
+    
+    app_name = "libro"
+    
+    urlpatterns = [
+        path("", LibroListView.as_view(), name="all"),
+        path("create/", LibroCreateView.as_view(), name="create"),
+        path("<int:pk>/detail/", LibroDetailView.as_view(), name='detail'),
+        path("<int:pk>/update/", LibroUpdateView.as_view(), name='update'),
+        path("<int:pk>/delete/", LibroDeleteView.as_view(), name='delete')
+    
+    ]
+    
+    urlpatterns += router.urls
+
+### 3.5 - Append External_App into project settings.py
+
+    EXTERNALS = [
+    "rest_framework"
+    ]
+
+
+
 
 
 
