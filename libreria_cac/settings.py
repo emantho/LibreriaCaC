@@ -144,6 +144,7 @@ STATIC_URL = 'static/'
 # STATICFILES_DIRS = [              # Used this config locally, comment the others
 #     BASE_DIR / "static"]
 
+# STATIC_ROOT = BASE_DIR / "staticfiles"   # Used this config in PythonAnywhere for API style
 STATIC_ROOT = BASE_DIR / "static"   # Used this config in PythonAnywhere, comment the others
 
 # Default primary key field type
