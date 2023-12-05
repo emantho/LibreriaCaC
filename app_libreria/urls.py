@@ -8,6 +8,8 @@ from .views import      LibroListView   \
                     ,   LibroUpdateView \
                     ,   LibroDeleteView 
 
+from .router import router
+
 app_name = "libro"
 
 urlpatterns = [
@@ -18,3 +20,5 @@ urlpatterns = [
     path("<int:pk>/delete/", LibroDeleteView.as_view(), name='delete')
 
 ]
+
+urlpatterns += router.urls
