@@ -86,13 +86,24 @@ WSGI_APPLICATION = 'libreria_cac.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = { # Configuration for local conection to database, comment PythonAnywhere to use
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+
+DATABASES = { # Configuration for remote conection to database, comment local to use
+    'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'emantho$libreria_cac',
+            'USER': 'emantho',
+            'PASSWORD': 'librer01234',
+            'HOST': 'emantho.mysql.pythonanywhere-services.com',
+            'PORT': '3306',
+            }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
