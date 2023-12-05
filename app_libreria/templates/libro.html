@@ -4,26 +4,35 @@
     <div">
         <h1>Libros</h1>
         <h2><a href="{% url 'libro:create' %}">Crear un Libro</a></h2>
-        <h2><a href="{% url 'libro:create' libro.id %}">Borrar Libro</a></h2>
-        {% for libro in libro_list%}
+
+        {% for libro in libro_list %}
         <div class="list">
-            
             <fieldset>
                 <legend>Titulo: {{libro.titulo}}</legend>
                 <ul>
-                    <li>Autor:      {{libro.autor}}</li>
-                    <li>Editorial:  {{libro.editorial}}</li>
-                    <li>Precio:     {{libro.precio}}</li>
+                    <li>Autor: {{libro.autor}}</li>
+                    <li>Editorial: {{libro.editorial}}</li>
+                    <li>Precio: {{libro.precio}}</li>
                     <li>Fecha_publicacion: {{libro.fecha_publicacion}}</li>
-                    <li>ISBN:       {{libro.isbn}}</li>
-                </ul>
-                
+                    <li>ISBN: {{libro.isbn}}</li>
 
+                </ul>
+                <span>
+                    <label for="">Borrar</label>
+                    <a href="{% url 'libro:delete' libro.id %}">❌</a>
+                </span>
+                <span>
+                    <label for="">Editar</label>
+                    <a href="{% url 'libro:update' libro.id %}">📝</a>
+                </span>
+                <span>
+                    <label for="">Detalles</label>
+                    <a href="{% url 'libro:detail' libro.id %}">🔍</a>
+                </span>
             </fieldset>
         </div>
-
         {% endfor %}
-    </div>
+        </div>
 </main>
 
 {% endblock %}

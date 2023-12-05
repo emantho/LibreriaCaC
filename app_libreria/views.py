@@ -33,9 +33,8 @@ class LibroCreateView(LibroBaseView,CreateView):
         "tipo": "Crear Libro"
     }
 
-
 class LibroUpdateView(LibroBaseView,UpdateView):
-    template_name = "libro_update.html"
+    template_name = "libro_create.html"     # Se utiliza el create que apuntando al id permite editar los mismos campos
     extra_context = {
         "tipo": "Actualizar Libro"
     }
