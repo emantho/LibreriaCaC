@@ -121,5 +121,19 @@ La aplicación Librería habilitará la gestión de libros, permitiendo la creac
 
 Se habilitarán una vista de administración con acceso total a las funciones de la aplicación. 
 
+## Estructura del CRUD usado
 
+### Aplicación Libreria app_libreria
+```
+├──app_libreria
+    ├── libro_create.html
+    ├── libro_delete.html
+    ├── libro_detail.html
+    └── libro.html
+```
+***libro.html*** -> Es la vista principal de la app es donde se listan los libros creados; cada libro cuenta con botones para ejecutar las acciones siguientes:
+* **libro_create** -> Abre una vista con un formulario con los campos de caracteristicas del libro
+* **libro_detail** -> Abre una vista listando los detalles del libro
+* **libro_delete** -> Borra el libro seleccionado
+* ***La edición*** se hace utilizando libro_create + el id del libro, lo que permite editar los campos
 

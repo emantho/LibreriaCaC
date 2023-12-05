@@ -166,26 +166,44 @@ App creation, Database connection,  and crud
     Inside this we must create the html to view the actions
     -->> libro.html
     ....
-    from django.contrib import admin
-    from django.urls import path , include
+    {% extends 'base.html' %} {% load static %} {% block content %}
 
+    <main>
+        <div">
+            <h1>Libros</h1>
+            <h2><a href="{% url 'libro:create' %}">Crear un Libro</a></h2>
 
-    from .views import      LibroListView   \
-                        ,   LibroDetailView \
-                        ,   LibroCreateView \
-                        ,   LibroUpdateView \
-                        ,   LibroDeleteView
+            {% for libro in libro_list %}
+            <div class="list">
+                <fieldset>
+                    <legend>Titulo: {{libro.titulo}}</legend>
+                    <ul>
+                        <li>Autor: {{libro.autor}}</li>
+                        <li>Editorial: {{libro.editorial}}</li>
+                        <li>Precio: {{libro.precio}}</li>
+                        <li>Fecha_publicacion: {{libro.fecha_publicacion}}</li>
+                        <li>ISBN: {{libro.isbn}}</li>
 
-    app_name = "libro"
+                    </ul>
+                    <span>
+                        <label for="">Borrar</label>
+                        <a href="{% url 'libro:delete' libro.id %}">❌</a>
+                    </span>
+                    <span>
+                        <label for="">Editar</label>
+                        <a href="{% url 'libro:update' libro.id %}">📝</a>
+                    </span>
+                    <span>
+                        <label for="">Detalles</label>
+                        <a href="{% url 'libro:detail' libro.id %}">🔍</a>
+                    </span>
+                </fieldset>
+            </div>
+            {% endfor %}
+            </div>
+    </main>
 
-    urlpatterns = [
-        path("", LibroListView.as_view(), name="all"),
-        path("create/", LibroCreateView.as_view(), name="create"),
-        path("<int:pk>/detail/", LibroDetailView.as_view(), name="detail"),
-        path("<int:pk>/update/", LibroUpdateView.as_view(), name="update"),
-        path("<int:pk>/delete/", LibroDeleteView.as_view(), name="delete")
-
-    ]
+{% endblock %}
     ....
 
 2.3.3 - Create the views for the html
@@ -318,8 +336,30 @@ App creation, Database connection,  and crud
 
 2.4.3 - create libro_delete.html and connect with libro.html
     ```
+    <span>
+        <label for="">Borrar</label>
+        <a href="{% url 'libro:delete' libro.id %}">❌</a>
+    </span>
     
     ```
+2.4.4 - create libro_update.html and connecting with libro.html
+    ```
+    <span>
+        <label for="">Editar</label>
+        <a href="{% url 'libro:update' libro.id %}">📝</a>
+    </span>
+    ```
+2.4.4 - create libro_detail.html and connect with libro.html
+    ```
+    <span>
+        label for="">Detalles</label>
+        <a href="{% url 'libro:detail' libro.id %}">🔍</a>
+    </span>
+    
+    ```
+
+
+
 
 
 titulo	autor	publicacion	isdb
