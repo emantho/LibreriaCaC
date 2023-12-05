@@ -455,9 +455,3 @@ App creation
                 }
         }
 
-
-
-
-titulo	autor	publicacion	isdb
-Introducción a la Pasteleria	Diana Pinzon	2018-12-19	asdfkjhq34jknadf98243rt
-Jugar y Aprender	Emilia Manjarres Pinzon	2022-12-25	lñjksdfgklnje9o8243
