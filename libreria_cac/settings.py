@@ -141,11 +141,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [              # Used this config locally, comment the others
-#     BASE_DIR / "static"]
+STATICFILES_DIRS = [              # Used this config locally, comment the others
+    BASE_DIR / "static"]
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"   # Used this config in PythonAnywhere for API style
-STATIC_ROOT = BASE_DIR / "static"   # Used this config in PythonAnywhere, comment the others
+STATIC_ROOT = BASE_DIR / "staticfiles"   # Used this config in PythonAnywhere for API style
+# STATIC_ROOT = BASE_DIR / "static"   # Used this config in PythonAnywhere, comment the others
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
