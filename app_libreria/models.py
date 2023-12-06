@@ -8,7 +8,7 @@ class Libro(models.Model): # This is the model to be registered in app_libreria.
     editorial = models.CharField(max_length=100, null=False, blank=False)
     precio = models.IntegerField(null=False, blank=False)
     fecha_publicacion = models.DateField(max_length=100, null=False, blank=False)
-    isbn = models.CharField(max_length=100, null=True, blank=False)
+    isbn = models.CharField(max_length=13, unique=True, null=True, blank=False)
 
     # podemos crear la tabla con un nombre especifico pero se lo tenemos
     # que indicar directamente en la metaclase

@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<main>
-    <div>
-        <h1>{{libro.nombre}}</h1>
+<main class="main">
+    <div class="detail-main">
+        <!-- <div><h1>werteg{{libro.nombre}}</h1></div> -->
         {% for label, value in libro.get_fields %}
 
-        <p>{{label | upper}}</p>
-        <p>{{value}}</p>
+        <div class="detail-p"><p>{{label | upper}}</p>
+        <p>{{value}}</p></div>
 
         {% endfor %}
 
