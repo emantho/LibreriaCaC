@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*6t$3qzex%_su&p2vt9ejfd+%@)sn^4gu5*+sgi0&!&7z$6(g_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True    # only locally
-# DEBUG = False   # only PythonAnywhere
+# DEBUG = True    # only locally
+DEBUG = False   # only PythonAnywhere
 
-ALLOWED_HOSTS = [] # Used this config locally, comment the others
-# ALLOWED_HOSTS = ["emantho.pythonanywhere.com"] # Used this config in PythonAnywhere, comment the others
+# ALLOWED_HOSTS = [] # Used this config locally, comment the others
+ALLOWED_HOSTS = ["emantho.pythonanywhere.com"] # Used this config in PythonAnywhere, comment the others
 
 # Application definition
 
@@ -86,24 +86,24 @@ WSGI_APPLICATION = 'libreria_cac.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = { # Configuration for local conection to database, comment PythonAnywhere to use
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
-# DATABASES = { # Configuration for remote conection to database, comment local to use
+# DATABASES = { # Configuration for local conection to database, comment PythonAnywhere to use
 #     'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'emantho$libreria_cac',
-#             'USER': 'emantho',
-#             'PASSWORD': 'librer01234',
-#             'HOST': 'emantho.mysql.pythonanywhere-services.com',
-#             'PORT': '3306',
-#             }
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+# }
+
+
+DATABASES = { # Configuration for remote conection to database, comment local to use
+    'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'emantho$libreria_cac',
+            'USER': 'emantho',
+            'PASSWORD': 'librer01234',
+            'HOST': 'emantho.mysql.pythonanywhere-services.com',
+            'PORT': '3306',
+            }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -144,7 +144,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [              # Used this config locally, comment the others
     BASE_DIR / "static"]
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"   # Used this config in PythonAnywhere for API style
+STATIC_ROOT = BASE_DIR / "staticfiles"   # Used this config in PythonAnywhere for API style
 # STATIC_ROOT = BASE_DIR / "static"   # Used this config in PythonAnywhere, comment the others
 
 # Default primary key field type
