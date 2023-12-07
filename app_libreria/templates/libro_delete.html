@@ -1,16 +1,19 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<main>
-    <div>
-        <h1>Estas seguro ue deseas borrar este libro?</h1>
-        <h2>{{libro.nombre}}</h2>
+<main class="main">
+    <div class="detail-main">
+        <h1 class="borrar-h1">Estas seguro que deseas borrar este libro?</h1>
+        <h2 class="borrar-h2">{{libro.titulo}}</h2>
         <form method="post">
             {% csrf_token %}
             <div>{{form.as_p}}</div>
-            <input type="submit" value="{{ tipo }}" />
         </form>
-
-        <a href="{% url 'libro:all' %}">Cancelar</a>
+        <div class="delete-buttons">
+            <input class="libro-boton crear-boton" type="submit" value="{{ tipo }}" />
+            <div class="detail-div-botton">
+                <a href="{% url 'libro:all' %}"><input class="libro-boton" type="button" value="Cancelar" /></a>
+            </div>
+        </div>
     </div>
 </main>
 {% endblock %}

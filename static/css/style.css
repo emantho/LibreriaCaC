@@ -159,15 +159,11 @@ ul {
 }
 
 .libro-list {
-    max-width: 80%;
-    /* max-height: 80%; */
-    /* width: fit-content; */
+    max-width: 70%;
     box-sizing: border-box;
-    /* width: calc(40% - 10px);
-    box-sizing: border-box;
-    /* min-width: 30% - 10px; */
-    /* margin-bottom: 20px;
-    padding: 0 10px; */
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 @media (max-width: 1500px) {
@@ -267,11 +263,17 @@ ul {
 
         /* ------------- FIELDSET  --------- */
 .libro-fieldset {
+    display: flex;
+    flex-wrap: wrap;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 15px;
     padding: 20px;
     margin: 20px 0;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .libro-legend {
@@ -282,8 +284,12 @@ ul {
 }
 
 .libro-ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     padding: 0;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .libro-li {
@@ -295,8 +301,8 @@ ul {
 
 .libro-span-div {
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    justify-content: space-around;
+    max-width: 70%;
 }
 
 .libro-li-span {
@@ -304,8 +310,8 @@ ul {
 }
 
 .libro-span {
-    display: inline-block;
-    margin: 10px 2px 0 0;
+    display: flex; 
+    /* margin: 1px; */
 }
 
 .libro-span label {
@@ -351,6 +357,33 @@ ul {
 .libro-boton {
     float: right; /* Hace que el botón se alinee a la derecha */
     margin-right: 20px;
+}
+
+/* ------------------ BORRAR LIBRO ------------------ */
+
+.borrar-h1 {
+    text-align: center;
+
+}
+
+.borrar-h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+    padding: 1em;
+    height: fit-content;
+}
+
+.delete-buttons {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 /* ------------------ NAV ------------------ */
