@@ -9,8 +9,8 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
 
 ## integrantes 
 * Eder Manjarres
-* Julio
-*
+* Julio Cesar Feas
+* Gabriel Fernandez
 
 
 ## Estructura de proyecto
