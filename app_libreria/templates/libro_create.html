@@ -1,14 +1,16 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<main>
-    <div>
+<main class="main">
+    <div class="detail-main">
         <!-- <h1>CREAR LIBRO</h1> -->
         <form method="post">
             {% csrf_token %}
-            <div>{{form.as_div}}</div> <!-- cada campo el form es un div -->
-            <input type="submit" value="{{ tipo }}" />
+            <div class="crear-div">{{form.as_div}}</div> <!-- cada campo el form es un div -->
+            <input class="libro-boton crear-boton" type="submit" value="{{ tipo }}" />
         </form>
-        <a href="{% url 'libro:all' %}">Volver al inicio</a>
+        <div class="detail-div-botton">
+            <a href="{% url 'libro:all' %}"><input class="libro-boton" type="button" value="Volver" /></a>
+        </div>
     </div>
 </main>
 

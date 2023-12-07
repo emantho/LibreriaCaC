@@ -209,6 +209,29 @@ ul {
 }
 
 
+.crear-div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em;
+    /* border: solid 5px red; */
+}
+
+.crear-div label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.crear-div [id^="id_"] {
+    float: right; /* Hace que el botón se alinee a la derecha */
+    margin-right: 25px;
+    width: 60%;
+} 
+
+.crear-boton { 
+    width: fit-content;
+}
 
         /* ------------- FIELDSET  --------- */
 .libro-fieldset {
@@ -258,18 +281,42 @@ ul {
 
         /* ------------- DETAILS  --------- */
 .detail-main {
+    margin: 100px auto;
+    padding: 50px ;
+    width: 33%;
     box-sizing: border-box;
-    margin: 20px;
-    border: solid 5px red;
+    border: none;
+    background-color: #ccc;
+    border-radius: 15px;
     display: flex;
-    width: 100%;
     flex-direction: column;
 }
 
 .detail-p {
     display: flex;
-    flex-direction: row;
-    border: solid 5px red;
+    flex-direction: wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 22px;
+}
+
+.p-label {
+    display: flex;
+    font-weight: bold;
+    font-size: 18px;
+    align-content: center;
+    align-items: center;
+}
+
+.detail-div-botton a {
+    width: fit-content;
+}
+
+.libro-boton {
+    float: right; /* Hace que el botón se alinee a la derecha */
+    margin-right: 20px;
 }
 
 /* ------------------ NAV ------------------ */
