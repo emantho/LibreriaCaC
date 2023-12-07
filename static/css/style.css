@@ -1,8 +1,9 @@
 /* ------------------ GENERAL ------------------ */
 
-html, * {
-    padding: 0em;
-    margin: 0em;
+html,
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -12,8 +13,9 @@ body {
     font-family: "Oswald", sans-serif;
     justify-content: center;
     justify-items: center;
-    align-items: center; 
-    min-height: 100vh;
+    align-items: center;
+    min-width: 100%;
+    width: 100%;
 }
 
 h1 {
@@ -92,7 +94,7 @@ ul {
 
 .header {
     box-sizing: border-box;
-    position:fixed ;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
@@ -134,6 +136,187 @@ ul {
     display: inherit;
     justify-content: center;
     margin: 0.8em;
+}
+
+
+/* ------------------ NOVEDADES ------------------ */
+
+.libro-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.libro-list {
+    width: calc(40% - 10px);
+    min-width: 30% - 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+    .libro-list {
+        width: calc(23.33% - 20px);
+    }
+}
+
+.libro-boton {
+    display: inline-block;
+    margin: 20px 10px 5px 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(32, 138, 106);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.libro-boton:hover {
+    background-color: #c0bebe;
+    color: rgb(32, 138, 106);
+}
+
+.libro-api-boton {
+    display: inline-block;
+    margin: 20px 10px 5px 10px;
+    margin-left: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(32, 138, 106);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.libro-api-boton:hover {
+    background-color: #c0bebe;
+    color: rgb(138, 32, 127);
+}
+
+
+.crear-div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em;
+    /* border: solid 5px red; */
+}
+
+.crear-div label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.crear-div [id^="id_"] {
+    float: right; /* Hace que el botón se alinee a la derecha */
+    margin-right: 25px;
+    width: 60%;
+} 
+
+.crear-boton { 
+    width: fit-content;
+}
+
+        /* ------------- FIELDSET  --------- */
+.libro-fieldset {
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.libro-legend {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.libro-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.libro-li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.libro-span-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.libro-li-span {
+    font-weight: bold;
+}
+
+.libro-span {
+    display: inline-block;
+    margin: 10px 2px 0 0;
+}
+
+.libro-span label {
+    margin-left: 10px;
+}
+
+
+        /* ------------- DETAILS  --------- */
+.detail-main {
+    margin: 100px auto;
+    padding: 50px ;
+    width: 33%;
+    box-sizing: border-box;
+    border: none;
+    background-color: #ccc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-p {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 22px;
+}
+
+.p-label {
+    display: flex;
+    font-weight: bold;
+    font-size: 18px;
+    align-content: center;
+    align-items: center;
+}
+
+.detail-div-botton a {
+    width: fit-content;
+}
+
+.libro-boton {
+    float: right; /* Hace que el botón se alinee a la derecha */
+    margin-right: 20px;
 }
 
 /* ------------------ NAV ------------------ */
@@ -207,7 +390,7 @@ ul {
 
 /* ------------------ MAIN ------------------ */
 
-main {
+.main {
     box-sizing: border-box;
     margin: 7em 4em 5em 4em;
     padding: 2em 0;
@@ -217,7 +400,7 @@ main {
 
 footer {
     display: flex;
-    position:fixed ;
+    position: fixed;
     bottom: 0;
     margin-top: 2em;
     justify-content: space-around;
@@ -311,7 +494,7 @@ fieldset {
 #seccionQuienesSomos {
     margin-top: 2em;
     padding-top: 0;
-    scroll-margin-top: 6em;    
+    scroll-margin-top: 6em;
 }
 
 .seccionQuienesSomos {
@@ -333,6 +516,7 @@ fieldset {
 
 .main-login {
     display: grid;
+    width: 100%;
     grid: repeat(2, 0.5fr);
     grid-row-gap: 2em;
     margin: 1em auto;
@@ -396,6 +580,7 @@ fieldset {
 
 .main-categorias {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 2em auto;
@@ -408,7 +593,7 @@ fieldset {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     position: relative;
-    
+
 }
 
 #contenido-categoria {
@@ -461,7 +646,7 @@ fieldset {
     max-height: 40em;
     padding-top: 0.6em;
     padding-bottom: 0.6em;
-    margin-bottom: 0.2em ;
+    margin-bottom: 0.2em;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -529,7 +714,7 @@ fieldset {
     border-radius: 0 0.1em 0.1em 0;
     -webkit-user-select: none;
     user-select: none;
-    
+
 }
 
 .next {
@@ -574,6 +759,7 @@ fieldset {
 
 .main-carrito {
     display: flex;
+    width: 100%;
     justify-content: space-around;
     margin: 2em auto;
 }

@@ -441,7 +441,7 @@ App creation
 ##### 3.6.1.2 - Start libreria_cac-Database console
     In Databases page goto databases and select emantho$libreria_cac
     
-##### 3.6.2 - Integrate Database with project.settings.py
+#### 3.6.2 - Integrate Database with project.settings.py
     Add MySQL database information into project.settings.py
 
     DATABASES = { # Configuration for remote conection to database, comment local to use
@@ -455,3 +455,30 @@ App creation
                 }
         }
 
+#### 3.6.3 - Styles for api_libros
+    Share static globally
+
+##### 3.6.3.1 - Create folder staticfiles in root
+    mkdir staticfiles
+
+##### 3.6.3.2 - change in project.setting.py
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [                    # Used this config locally, comment the others
+    BASE_DIR / "static"]
+    STATIC_ROOT = BASE_DIR / "staticfiles"  # Used this config in PythonAnywhere for API style
+
+##### 3.6.3.3 - Do collectstatic
+    python manage.py collectstatic
+    and then a *Reload*
+
+### 3.7 - CORS
+    Working with remote servers and externals connections
+
+#### 3.7.1 - Create cors.py in app_folder
+    mkdir cors.py in app_libreria
+
+#### 3.7.2 - Adding cors configuration in project.settings.py
+    CUSTOM_MIDDLEWARE = ["app_libreria.cors.CorsMiddlewareMixin"]
+    MIDDLEWARE += CUSTOM_MIDDLEWARE
+
+    

@@ -1,37 +1,49 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<main>
-    <div">        
-        <h2><a href="{% url 'libro:create' %}">Crear un Libro</a></h2>
+<main class="main">
+
+    <div class="main-button-container">
+        <a href="{% url 'libro:create' %}"><input class="libro-boton" type="button" value="Crear un Libro" /></a>
+        <a href="http://127.0.0.1:8000/libro/api-libro/"><input class="libro-api-boton" type="button" value="API" /></a>
+    </div>
+
+    <div class="libro-main">
+
 
         {% for libro in libro_list %}
-        <div class="list">
-            <fieldset>
-                <legend>Titulo: {{libro.titulo}}</legend>
-                <ul>
-                    <li>Autor: {{libro.autor}}</li>
-                    <li>Editorial: {{libro.editorial}}</li>
-                    <li>Precio: {{libro.precio}}</li>
-                    <li>Fecha_publicacion: {{libro.fecha_publicacion}}</li>
-                    <li>ISBN: {{libro.isbn}}</li>
+        <div class="libro-list">
+
+            <fieldset class="libro-fieldset">
+                <legend class="libro-legend"> {{libro.titulo}}</legend>
+                <ul class="libro-ul">
+                    <li class="libro-li"><span class="libro-li-span"> Autor:</span> {{libro.autor}}</li>
+                    <li class="libro-li"><span class="libro-li-span"> Editorial:</span> {{libro.editorial}}</li>
+                    <li class="libro-li"><span class="libro-li-span"> Precio:</span> ARS$ {{libro.precio}}</li>
+                    <li class="libro-li"><span class="libro-li-span"> Fecha de Publicacion:</span>
+                        {{libro.fecha_publicacion}}</li>
+                    <li class="libro-li"><span class="libro-li-span"> ISBN:</span> {{libro.isbn}}</li>
 
                 </ul>
-                <span>
-                    <label for="">Borrar</label>
-                    <a href="{% url 'libro:delete' libro.id %}">❌</a>
-                </span>
-                <span>
-                    <label for="">Editar</label>
-                    <a href="{% url 'libro:update' libro.id %}">📝</a>
-                </span>
-                <span>
-                    <label for="">Detalles</label>
-                    <a href="{% url 'libro:detail' libro.id %}">🔍</a>
-                </span>
+                <div class="libro-span-div">
+                    <span class="libro-span">
+                        <label for=""></label>
+                        <a href="{% url 'libro:delete' libro.id %}"><input class="libro-boton" type="button" value="Borrar ❌" /></a>
+                    </span>
+
+                    <span class="libro-span">
+                        <label for=""></label>
+                        <a href="{% url 'libro:update' libro.id %}"><input class="libro-boton" type="button" value="Editar 📝" /></a>
+                    </span>
+
+                    <span class="libro-span">
+                        <label for=""></label>
+                        <a href="{% url 'libro:detail' libro.id %}"><input class="libro-boton" type="button" value="Detalle 🔍" /></a>
+                    </span>
+                </div>
             </fieldset>
         </div>
         {% endfor %}
-        </div>
+    </div>
 </main>
 
 {% endblock %}

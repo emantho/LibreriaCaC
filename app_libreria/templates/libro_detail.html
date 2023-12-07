@@ -1,16 +1,20 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<main>
-    <div>
-        <h1>{{libro.nombre}}</h1>
+<main class="main">
+    <div class="detail-main">
+        <!-- <div><h1>werteg{{libro.nombre}}</h1></div> -->
         {% for label, value in libro.get_fields %}
 
-        <p>{{label | upper}}</p>
-        <p>{{value}}</p>
+        <div class="detail-p">
+            <p class="p-label">{{label | upper}}</p>
+            <p class="p-value">{{value}}</p>
+        </div>
 
         {% endfor %}
 
-        <a href="{% url 'libro:all' %}">BACK</a>
+        <div class="detail-div-botton">
+            <a href="{% url 'libro:all' %}"><input class="libro-boton" type="button" value="Volver" /></a>
+        </div>
     </div>
 </main>
 
