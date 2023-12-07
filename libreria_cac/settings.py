@@ -52,6 +52,9 @@ INSTALLED_APPS += CUSTOM_APPS
 
 INSTALLED_APPS += EXTERNALS 
 
+# Here is the configuration for cors
+CUSTOM_MIDDLEWARE = ["app_libreria.cors.CorsMiddlewareMixin"]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -61,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE += CUSTOM_MIDDLEWARE
 
 ROOT_URLCONF = 'libreria_cac.urls'
 

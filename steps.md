@@ -471,6 +471,14 @@ App creation
     python manage.py collectstatic
     and then a *Reload*
 
+### 3.7 - CORS
+    Working with remote servers and externals connections
 
+#### 3.7.1 - Create cors.py in app_folder
+    mkdir cors.py in app_libreria
+
+#### 3.7.2 - Adding cors configuration in project.settings.py
+    CUSTOM_MIDDLEWARE = ["app_libreria.cors.CorsMiddlewareMixin"]
+    MIDDLEWARE += CUSTOM_MIDDLEWARE
 
     
