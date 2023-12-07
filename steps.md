@@ -481,4 +481,5 @@ App creation
     CUSTOM_MIDDLEWARE = ["app_libreria.cors.CorsMiddlewareMixin"]
     MIDDLEWARE += CUSTOM_MIDDLEWARE
 
-    
+#### 3.7.3 -TEst external connection fron anyserver or website
+    fetch("https://emantho.pythonanywhere.com/libro/api-libro/").then(res => res.json()).then(data => console.log(data))
