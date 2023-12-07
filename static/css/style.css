@@ -3,7 +3,7 @@
 html,
 * {
     padding: 0;
-    margin: 0;
+    margin: 0;  
     box-sizing: border-box;
 }
 
@@ -14,7 +14,6 @@ body {
     justify-content: center;
     justify-items: center;
     align-items: center;
-    min-width: 100%;
     width: 100%;
 }
 
@@ -142,10 +141,50 @@ ul {
 /* ------------------ NOVEDADES ------------------ */
 
 .libro-main {
-    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    column-gap: 1em;
+    row-gap: 1em;
+    overflow: scroll;
+    margin: 0.5em 2em 0.5em 0.5em;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly; */
 }
+
+.libro-list {
+    width: fit-content;
+    box-sizing: border-box;
+    /* width: calc(40% - 10px);
+    box-sizing: border-box;
+    /* min-width: 30% - 10px; */
+    /* margin-bottom: 20px;
+    padding: 0 10px; */
+}
+
+@media (max-width: 1500px) {
+    .libro-main {
+        grid-template-columns: repeat(2, 1fr);
+        /* width: calc(30.33% - 20px); */
+    }
+}
+
+@media (max-width: 1100px) {
+    .libro-main {
+        grid-template-columns: repeat(2, 1fr);
+        /* width: calc(20.33% - 20px); */
+    }
+}
+
+@media (max-width: 970px) {
+    .libro-main {
+        grid-template-columns: repeat(1, 1fr);
+        /* width: calc(20.33% - 20px); */
+    }
+}
+
 
 .main-button-container {
     display: flex;
@@ -153,19 +192,6 @@ ul {
     width: 100%;
 }
 
-.libro-list {
-    width: calc(40% - 10px);
-    min-width: 30% - 10px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    padding: 0 10px;
-}
-
-@media (min-width: 768px) {
-    .libro-list {
-        width: calc(23.33% - 20px);
-    }
-}
 
 .libro-boton {
     display: inline-block;
@@ -235,6 +261,7 @@ ul {
 
         /* ------------- FIELDSET  --------- */
 .libro-fieldset {
+    box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 15px;
     padding: 20px;
@@ -255,6 +282,7 @@ ul {
 
 .libro-li {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -392,7 +420,7 @@ ul {
 
 .main {
     box-sizing: border-box;
-    margin: 7em 4em 5em 4em;
+    margin: 7em 2em 5em 2em;
     padding: 2em 0;
 }
 
