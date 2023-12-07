@@ -8,17 +8,62 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
 ## BACKEND {PYTHON, DJANGO, SQLITE3 / MySQL}
 
 ## integrantes 
-* 
-* 
+* Eder Manjarres
+* Julio
 *
 
 
 ## Estructura de proyecto
 ```
 .
+├── app_libreria
+│   ├── admin.py
+│   ├── apps.py
+│   ├── cors.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_alter_libro_isbn.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0002_alter_libro_isbn.cpython-310.pyc
+│   │       ├── 0002_alter_libro_precio.cpython-310.pyc
+│   │       ├── 0003_alter_libro_table.cpython-310.pyc
+│   │       └── __init__.cpython-310.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── cors.cpython-310.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── router.cpython-310.pyc
+│   │   ├── serializers.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── views.cpython-310.pyc
+│   │   └── viewsets.cpython-310.pyc
+│   ├── router.py
+│   ├── serializers.py
+│   ├── templates
+│   │   ├── libro_create.html
+│   │   ├── libro_delete.html
+│   │   ├── libro_detail.html
+│   │   └── libro.html
+│   ├── tests.py
+│   ├── urls.py
+│   ├── viewsets.py
+│   └── views.py
+├── db.sqlite3
 ├── libreria_cac
 │   ├── asgi.py
 │   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── views.cpython-310.pyc
+│   │   └── wsgi.cpython-310.pyc
 │   ├── settings.py
 │   ├── urls.py
 │   ├── views.py
@@ -103,6 +148,34 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
 │       ├── sliderIngresosRecomendados.js
 │       ├── validarFormContacto.js
 │       └── validarUsuario.js
+├── staticfiles
+│   ├── admin
+│   │   ├── css
+│   │   │   └── vendor
+│   │   │       └── select2
+│   │   ├── img
+│   │   │   └── gis
+│   │   └── js
+│   │       ├── admin
+│   │       └── vendor
+│   │           ├── jquery
+│   │           ├── select2
+│   │           │   └── i18n
+│   │           └── xregexp
+│   ├── css
+│   ├── icon
+│   ├── image
+│   ├── js
+│   └── rest_framework
+│       ├── css
+│       ├── docs
+│       │   ├── css
+│       │   ├── img
+│       │   └── js
+│       ├── fonts
+│       ├── img
+│       └── js
+├── steps.md
 └── templates
     ├── base.html
     ├── carrito.html
@@ -113,7 +186,6 @@ Este proyecto Django tiene como objetivo proporcionar una solución simple y efi
         ├── footer.html
         └── header.html
 ```
-
 ## Aplicación Libreria Codo a Codo
 
 ...
@@ -136,4 +208,30 @@ Se habilitarán una vista de administración con acceso total a las funciones de
 * **libro_detail** -> Abre una vista listando los detalles del libro
 * **libro_delete** -> Borra el libro seleccionado
 * ***La edición*** se hace utilizando libro_create + el id del libro, lo que permite editar los campos
+
+## API Routes Documentation
+
+### Method: GET,PUT, DELETE
+URL: /api/api-libro/<id>/
+Description: Retrieves, updates, or deletes a specific libro by ID.
+Headers: Content-Type': 'application/json
+
+### Method: POST
+URL: /api/api-libro
+Description: Generates a new libro.
+Headers: Content-Type: application/json"
+Body: {
+    "titulo": "",
+    "autor": "",
+    "editorial":"",
+    "precio":,
+    "fecha_publicacion":"",
+    "isbn":""
+    }
+
+## Admin
+### Admin Panel
+Method: GET
+URL: /admin/
+Description: Access to Django admin panel for administration purposes.
 
